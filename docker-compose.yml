@@ -1,0 +1,14 @@
+services:
+  scan-planner:
+    image: osrf/ros:noetic-desktop-full
+    container_name: scan-planner-dev
+    working_dir: /ws
+    volumes:
+      - ./:/ws
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    network_mode: host
+    stdin_open: true
+    tty: true
+    command: bash
